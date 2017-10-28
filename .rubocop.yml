@@ -1,0 +1,161 @@
+require: rubocop-rspec
+inherit_from: .rubocop-rspec.yml
+
+inherit_gem:
+  rubocop-rails:
+    - config/rails.yml
+
+AllCops:
+  TargetRubyVersion:  2.3
+  TargetRailsVersion: 5.1
+  Exclude:
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'db/**/*'
+    - 'Gemfile.lock'
+    - 'Guardfile'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+
+
+Bundler/OrderedGems:
+  Enabled: true
+
+# Prefer &&/|| over and/or.
+Style/AndOr:
+  Enabled: true
+
+# Do not use braces for hash literals when they are the last argument of a
+# method call.
+Style/BracesAroundHashParameters:
+  Enabled: true
+  EnforcedStyle: context_dependent
+
+# Align `when` with `case`.
+Layout/CaseIndentation:
+  Enabled: true
+
+# Align comments with method definitions.
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+# In a regular class definition, no empty lines around the body.
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+
+# In a regular method definition, no empty lines around the body.
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+
+# In a regular module definition, no empty lines around the body.
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
+
+# Two spaces, no tabs (for indentation).
+Layout/IndentationWidth:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+Layout/SpaceAroundOperators:
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+    Enabled: true
+
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+  Exclude:
+    - 'db/migrate/**/*.rb'
+
+# Use `foo {}` not `foo{}`.
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+# Use `foo { bar }` not `foo {bar}`.
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+
+# Use `{ a: 1 }` not `{a:1}`.
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+Layout/SpaceInsideParens:
+  Enabled: true
+
+# Check quotes usage according to lint rule below.
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: single_quotes
+
+# Detect hard tabs, no hard tabs.
+Layout/Tab:
+  Enabled: true
+
+# Blank lines should not have any spaces.
+Layout/TrailingBlankLines:
+  Enabled: true
+
+# No trailing whitespace.
+Layout/TrailingWhitespace:
+  Enabled: true
+
+# Use quotes for string literals when they are enough.
+Style/UnneededPercentQ:
+  Enabled: true
+
+# This cop checks for redundant uses of self.
+Style/RedundantSelf:
+  Enabled: true
+
+# Align `end` with the matching keyword or starting expression except for
+# assignments, where it should be aligned with the LHS.
+Lint/EndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: variable
+
+# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
+  Enabled: true
+
+# Commonly used screens these days easily fit more than 80 characters.
+Metrics/LineLength:
+  Max: 120
+
+# Too short methods lead to extraction of single-use methods, which can make
+# the code easier to read (by naming things), but can also clutter the class
+Metrics/MethodLength:
+  Max: 5
+
+# The guiding principle of classes is SRP, SRP can't be accurately measured by LoC
+Metrics/ClassLength:
+  Max: 100
+
+# Pass no more than four parameters into a method. Hash options are parameters.
+Metrics/ParameterLists:
+  Enabled: true
+  Max: 4

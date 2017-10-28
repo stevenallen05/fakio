@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pattern:</strong>
+  <%= @phone_number.pattern %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @phone_number.country %>
+</p>
+
+<p>
+  <strong>Legit:</strong>
+  <%= @phone_number.legit %>
+</p>
+
+<%= link_to 'Edit', edit_phone_number_path(@phone_number) %> |
+<%= link_to 'Back', phone_numbers_path %>
