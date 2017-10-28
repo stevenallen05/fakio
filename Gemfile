@@ -35,6 +35,7 @@ end
 
 group :test do
   gem 'rspec'
+  gem 'rspec-rails'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
 end
