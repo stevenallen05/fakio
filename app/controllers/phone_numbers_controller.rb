@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PhoneNumbersController < ApplicationController
   before_action :set_phone_number, only: [:show, :edit, :update, :destroy]
 
