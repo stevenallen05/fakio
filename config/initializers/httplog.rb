@@ -1,3 +1,4 @@
+=begin
 HttpLog.configure do |config|
     
       # Enable or disable all logging
