@@ -42,7 +42,7 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails', '~> 4'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'rubocop-rails'

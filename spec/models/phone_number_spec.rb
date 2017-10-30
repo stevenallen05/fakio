@@ -3,8 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe PhoneNumber, type: :model do
+  subject(:phone_number) { create :phone_number, pattern: pattern }
+
   let(:pattern) { '.*9' }
-  let(:phone_number) { create :phone_number, pattern: pattern }
 
   it { is_expected.to be_valid }
+
+  it { byebug }
 end
