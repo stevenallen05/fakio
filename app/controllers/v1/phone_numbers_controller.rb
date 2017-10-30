@@ -2,5 +2,6 @@
 
 class V1::PhoneNumbersController < ApplicationController
   def lookup
+    
   end
 end

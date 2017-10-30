@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171028002942) do
+ActiveRecord::Schema.define(version: 20171030232344) do
 
   create_table "phone_numbers", force: :cascade do |t|
     t.string "pattern"
     t.string "country"
-    t.boolean "legit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "legit"
   end
 
 end
