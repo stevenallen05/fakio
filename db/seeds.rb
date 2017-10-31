@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+PhoneNumber.find_or_create_by(pattern: '.*', order: 999, status: :mobile)
+PhoneNumber.find_or_create_by(pattern: '.*9$', order: 1, status: :bad_number)
+PhoneNumber.find_or_create_by(pattern: '.*8$', order: 2, status: :landline)
