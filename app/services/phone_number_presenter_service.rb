@@ -8,6 +8,10 @@ class PhoneNumberPresenterService
     @url = url
   end
 
+  def status
+    @matcher&.status
+  end
+
   def to_json
     {
       "caller_name": 'null',
