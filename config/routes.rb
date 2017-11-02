@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount LetsencryptPlugin::Engine, at: '/' 
   resources :phone_numbers
 
   namespace :v1 do
