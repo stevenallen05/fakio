@@ -14,7 +14,7 @@ class PhoneNumberPresenterService
 
   def to_json
     {
-      "caller_name": 'null',
+      "caller_name": nil,
       "country_code": @country_data[:char_3_code],
       "phone_number": @number.to_s,
       "national_format": @number.to_s,
@@ -23,9 +23,9 @@ class PhoneNumberPresenterService
         "mobile_network_code": '999',
         "name": 'Fake Phone Company, LLC',
         "type": @matcher.status,
-        "error_code": 'null'
+        "error_code": nil
       },
-      "add_ons": 'null',
+      "add_ons": nil,
       "url": @url
     }.to_json
   end
