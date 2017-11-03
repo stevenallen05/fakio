@@ -22,8 +22,7 @@ class PhoneNumberPresenterService
         "mobile_country_code": '999',
         "mobile_network_code": '999',
         "name": 'Fake Phone Company, LLC',
-        "type": @matcher.status,
-        "error_code": 'null'
+        "type": @matcher.status
       },
       "add_ons": 'null',
       "url": @url
