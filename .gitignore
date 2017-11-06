@@ -12,6 +12,8 @@
 /db/*.sqlite3-journal
 !/db/production.sqlite3
 
+/public/assets/
+
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep

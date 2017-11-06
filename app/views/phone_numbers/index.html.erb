@@ -7,7 +7,7 @@
     <tr>
       <th>Pattern</th>
       <th>Country</th>
-      <th>Legit</th>
+      <th>Status</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= phone_number.pattern %></td>
         <td><%= phone_number.country %></td>
-        <td><%= phone_number.legit %></td>
+        <td><%= phone_number.status.humanize %></td>
         <td><%= link_to 'Show', phone_number %></td>
         <td><%= link_to 'Edit', edit_phone_number_path(phone_number) %></td>
         <td><%= link_to 'Destroy', phone_number, method: :delete, data: { confirm: 'Are you sure?' } %></td>
