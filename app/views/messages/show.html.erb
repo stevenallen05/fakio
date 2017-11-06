@@ -16,8 +16,8 @@
 </p>
 
 <p>
-  <strong>Send:</strong>
-  <%= @message.sent %>
+  <strong>Sent:</strong>
+  <%= time_ago_in_words(@message.sent) %> ago %>
 </p>
 
 <%= link_to 'Back', messages_path %>

@@ -19,7 +19,7 @@
         <td><%= message.from %></td>
         <td><%= message.to %></td>
         <td><%= message.body %></td>
-        <td><%= message.sent %></td>
+        <td><%= time_ago_in_words(message.sent) %> ago</td>
         <td><%= link_to 'Show', message %></td>
       </tr>
     <% end %>

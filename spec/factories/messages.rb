@@ -5,6 +5,5 @@ FactoryBot.define do
     from '+11111111111'
     to '+11111111111'
     body 'Lorem ipsum'
-    sent true
   end
 end

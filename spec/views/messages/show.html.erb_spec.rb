@@ -10,6 +10,5 @@ RSpec.describe 'messages/show', type: :view do
     expect(rendered).to include(@message.from)
     expect(rendered).to include(@message.to)
     expect(rendered).to include(@message.body)
-    expect(rendered).to include(@message.sent.to_s)
   end
 end
