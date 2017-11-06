@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031002722) do
+ActiveRecord::Schema.define(version: 20171106220912) do
+
+  create_table "messages", force: :cascade do |t|
+    t.string "from"
+    t.string "to"
+    t.string "body"
+    t.boolean "send"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "phone_numbers", force: :cascade do |t|
     t.string "pattern"

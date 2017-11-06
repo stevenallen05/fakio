@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Lookups', type: :request do
   describe 'GET /lookups' do
-    before { get v1_phone_number_lookup_path, params: { phone_number: phone_number } }
+    before { get phone_number_lookup_path, params: { phone_number: phone_number } }
     let(:json_response) { JSON.parse(response.body) }
 
     context 'with an American-matching number ending in a number other than 8 or 9' do

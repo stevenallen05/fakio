@@ -3,6 +3,16 @@
 class PhoneNumbersController < ApplicationController
   before_action :set_phone_number, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_fake_lookup, only: :lookup
+
+  def lookup
+    if %w[landline mobile].include? @fake_lookup.status
+      render json: @fake_lookup.to_json
+    else
+      render json: NotFoundPresenterService.new(number: params[:phone_number]).to_json, status: 404
+    end
+  end
+
   # GET /phone_numbers
   # GET /phone_numbers.json
   def index
@@ -72,5 +82,9 @@ class PhoneNumbersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def phone_number_params
       params.require(:phone_number).permit(:pattern, :country, :legit)
+    end
+
+    def set_fake_lookup
+      @fake_lookup = PhoneNumberPresenterService.new(number: params[:phone_number], url: request.url)
     end
 end
