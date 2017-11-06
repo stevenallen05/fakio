@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20171106220912) do
     t.string "from"
     t.string "to"
     t.string "body"
-    t.boolean "send"
+    t.boolean "sent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

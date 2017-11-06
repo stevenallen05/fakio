@@ -3,20 +3,13 @@
 require 'rails_helper'
 
 RSpec.describe 'messages/show', type: :view do
-  before do
-    @message = assign(:message, Message.create!(
-                                  from: 'From',
-                                  to: 'To',
-                                  body: 'Body',
-                                  send: false
-    ))
-  end
+  before { @message = create :message }
 
   it 'renders attributes in <p>' do
     render
-    expect(rendered).to match(/From/)
-    expect(rendered).to match(/To/)
-    expect(rendered).to match(/Body/)
-    expect(rendered).to match(/false/)
+    expect(rendered).to include(@message.from)
+    expect(rendered).to include(@message.to)
+    expect(rendered).to include(@message.body)
+    expect(rendered).to include(@message.sent.to_s)
   end
 end

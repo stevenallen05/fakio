@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration[5.1]
       t.string :from
       t.string :to
       t.string :body
-      t.boolean :send
+      t.boolean :sent
 
       t.timestamps
     end

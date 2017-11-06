@@ -41,6 +41,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'byebug'
   gem 'guard'
+  gem 'guard-bundler', require: false
   gem 'guard-rspec', require: false
   gem 'httplog'
   gem 'rubocop'
@@ -52,6 +53,7 @@ group :test do
   gem 'rspec-rails'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
+  gem 'shoulda-matchers'
 end
 
 group :development do
