@@ -6,7 +6,7 @@ class V1::PhoneNumbersController < ApplicationController
     if %w[landline mobile].include? @fake_lookup.status
       render json: @fake_lookup.to_json
     else
-      render json: NotFoundPresenterService.new(params[:phone_number]).to_json, status: 404
+      render json: NotFoundPresenterService.new(number: params[:phone_number]).to_json, status: 404
     end
   end
 

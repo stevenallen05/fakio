@@ -8,6 +8,4 @@ RSpec.describe PhoneNumber, type: :model do
   let(:pattern) { '.*9' }
 
   it { is_expected.to be_valid }
-
-  it { byebug }
 end
