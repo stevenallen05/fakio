@@ -35,23 +35,4 @@ RSpec.describe MessagesController, type: :controller do
       expect(response).to be_success
     end
   end
-
-  describe 'POST #create' do
-    context 'with valid params' do
-      before { post :create, params: { message: valid_attributes }, session: valid_session }
-
-      subject(:json_response) { JSON.parse(response.body) }
-
-      it 'renders the json representation of the sent SMS message' do
-        expect(JSON.parse(response.body)).to be_a Hash
-      end
-    end
-
-    context 'with invalid params' do
-      it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: { message: invalid_attributes }, session: valid_session
-        expect(response).to be_success
-      end
-    end
-  end
 end

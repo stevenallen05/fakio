@@ -3,7 +3,7 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
   skip_before_action :verify_authenticity_token, only: :create
-  
+
   # GET /messages
   # GET /messages.json
   def index
@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
+    byebug
     @message = Message.new(message_params)
     if @message.save
       render json: @message, status: :created
@@ -35,6 +36,6 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.require(:message).permit(:from, :to, :body, :send)
+      params.permit(:from, :to, :body)
     end
 end

@@ -3,6 +3,7 @@ FROM ruby:2.3.5-alpine
 WORKDIR /var/www
 
 RUN apk add --update \
+  bash \
   build-base \
   libxml2-dev \
   libxslt-dev \
