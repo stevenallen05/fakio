@@ -19,7 +19,6 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    byebug
     @message = Message.new(message_params)
     if @message.save
       render json: @message, status: :created
@@ -36,6 +35,10 @@ class MessagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def message_params
-      params.permit(:from, :to, :body)
+      ActionController::Parameters.new(f(params.to_unsafe_hash)).permit(:from, :to, :body)
+    end
+
+    def f(h)
+      Hash[h.map { |k, v| v.class == Array ? [k, v.map { |r| f r }.to_a] : [k.downcase, v] }].deep_symbolize_keys
     end
 end

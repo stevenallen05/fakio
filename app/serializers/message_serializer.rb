@@ -1,17 +1,21 @@
 # frozen_string_literal: true
 
 class MessageSerializer < ActiveModel::Serializer
-  attributes :status, :price, :datesent
+  attributes :Status, :Price, :DateSent, :sid
 
-  def datesent
+  def DateSent
       object.created_at
   end
 
-  def price
+  def Price
       '0.03'
   end
 
-  def status
+  def Status
       'sent'
+  end
+
+  def sid
+    SecureRandom.hex(13)
   end
 end
