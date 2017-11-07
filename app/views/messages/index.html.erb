@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Messages</h1>
+<h4>Messages</h4>
 
-<table>
+<table class="striped">
   <thead>
     <tr>
       <th>From</th>
@@ -19,8 +19,7 @@
         <td><%= message.from %></td>
         <td><%= message.to %></td>
         <td><%= message.body %></td>
-        <td><%= time_ago_in_words(message.sent) %> ago</td>
-        <td><%= link_to 'Show', message %></td>
+        <td><%= message.sent.strftime('%c') %> (<%= time_ago_in_words(message.sent) %> ago)</td>
       </tr>
     <% end %>
   </tbody>

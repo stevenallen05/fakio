@@ -4,6 +4,8 @@ class Message < ApplicationRecord
   validates :body, presence: true, length: { maximum: 1599 }
   validates :to, presence: true
 
+  default_scope { order(created_at: :desc) }
+
   def sent
     created_at
   end
