@@ -15,7 +15,7 @@
 
   <tbody>
     <% @messages.each do |message| %>
-      <tr>
+      <tr onclick="window.document.location='<%= message_path(message) %>';">
         <td><%= message.from %></td>
         <td><%= message.to %></td>
         <td><%= message.body %></td>
