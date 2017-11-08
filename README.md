@@ -26,7 +26,7 @@ The API will allow sending to any phone number, with all messages collected in t
 
 Easiest way to get this running quickly in a local environment is via the official Docker image:
 
-`docker run steveallen/fakio`
+`docker run -p 3000:3000 steveallen/fakio`
 
 ## Database
 
