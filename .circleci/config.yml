@@ -55,7 +55,6 @@ jobs:
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
                             --format progress
-            ./cc-test-reporter after-build --exit-code $?
             ./cc-test-reporter format-coverage -t simplecov coverage/.resultset.json
             ./cc-test-reporter upload-coverage
 
