@@ -9,6 +9,8 @@ gem 'rails', '5.1.4'
 gem 'active_model_serializers'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
+gem 'mysql2'
+gem 'pg'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
