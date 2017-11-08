@@ -67,6 +67,7 @@ By default, either through the docker launcher or runnning locally, the dashboar
 
 If you're using the official [Twilio Ruby gem](https://github.com/twilio/twilio-ruby), directing it to use Fakio is straightforward. When creating any Twilio::REST client, pass in a has with the following values:
 
+`{ host: <FAKIO HOSTNAME>, port: <FAKIO PORT>, use_ssl: false }`
 
 
 Example:
