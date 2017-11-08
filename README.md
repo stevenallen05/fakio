@@ -81,3 +81,10 @@ client = Twilio::REST::Client.new(TWILIO_ACCOUNT_SID,
                                    TWILIO_AUTH_TOKEN, 
                                    { host: 127.0.0.1, port: 3000, use_ssl: false })
 ```
+
+## TODO:
+
+- [ ] Implement easier way to change & order phonenumber lookup rules
+- [ ] Implement caller ID lookups
+- [ ] Implement authentication options, including via database & oauth2
+- [ ] Implement the phone number purchasing API endpoint
