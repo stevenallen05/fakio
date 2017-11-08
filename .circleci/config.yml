@@ -27,6 +27,12 @@ jobs:
           - v1-dependencies-
 
       - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+
+      - run:
           name: install dependencies
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
@@ -39,19 +45,19 @@ jobs:
       # Database setup
       - run: bundle exec rake db:setup
 
-      # Install CodeClimate report
-      - run: bundle install codeclimate-test-reporter
-
       # run tests!
       - run:
           name: run tests
           command: |
             mkdir /tmp/test-results
-            
+            ./cc-test-reporter before-build
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
-                            --format progress && bundle exec codeclimate-test-reporter
+                            --format progress
+            ./cc-test-reporter after-build --exit-code $?
+            ./cc-test-reporter format-coverage -t simplecov $CIRCLE_ARTIFACTS/coverage/.resultset.json
+            ./cc-test-reporter upload-coverage
 
       # collect reports
       - store_test_results:
