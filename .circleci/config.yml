@@ -39,6 +39,9 @@ jobs:
       # Database setup
       - run: bundle exec rake db:setup
 
+      # Install CodeClimate report
+      - run: bundle install codeclimate-test-reporter
+
       # run tests!
       - run:
           name: run tests
@@ -48,7 +51,7 @@ jobs:
             bundle exec rspec --format progress \
                             --format RspecJunitFormatter \
                             --out /tmp/test-results/rspec.xml \
-                            --format progress
+                            --format progress && bundle exec codeclimate-test-reporter
 
       # collect reports
       - store_test_results:
