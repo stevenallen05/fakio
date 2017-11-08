@@ -1,4 +1,4 @@
-#### Fakio
+# Fakio
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/95d64abcd68d3b3dca2e/maintainability)](https://codeclimate.com/github/stevenallen05/fakio/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/95d64abcd68d3b3dca2e/test_coverage)](https://codeclimate.com/github/stevenallen05/fakio/test_coverage)
@@ -8,7 +8,7 @@ A faked implentation of the Twilio API, written in RoR 5.
 
 ## Supported functionality
 
-# Carrier lookups
+### Carrier lookups
 
 Uses the [phone gem](https://github.com/carr/phone) to lookup the country code of a phone number. If it can parse the number to a country, the carrier lookup will return some dummy data, along with the guessed country code.
 
@@ -18,17 +18,17 @@ Default rules:
 2. A phone number ending in 8 is a registered landline number
 3. All other phone numbers are considered mobile phone numbers
 
-# Sending SMS
+### Sending SMS
 
 The API will allow sending to any phone number, with all messages collected in the dashboard. 
 
-### Quickstart
+## Quickstart
 
 Easiest way to get this running quickly in a local environment is via the official Docker image:
 
 `docker run steveallen/fakio`
 
-### Database
+## Database
 
 The default database engine is SQLite. MySQL/MariaDB and Postgres are also supported. To override, set the DATABASE_URL environment variable to match the following pattern:
 
@@ -38,7 +38,7 @@ or:
 
 `postgresql://<username>:<password>@<hostname or IP address>/<schema name>`
 
-### Running locally
+## Running locally
 
 This assumes you have a working ruby 2.3.5 installation already. If you do not, please consult [rbenv](https://github.com/rbenv/rbenv) or [rvm](https://rvm.io/)
 
@@ -59,11 +59,11 @@ This assumes you have a working ruby 2.3.5 installation already. If you do not, 
 `bundle exec rails s`
 
 
-### Accessing the dashboard
+## Accessing the dashboard
 
 By default, either through the docker launcher or runnning locally, the dashboard is accessible at [http://localhost:3000](http://localhost:3000)
 
-### Using Fakio in a Ruby application
+## Using Fakio in a Ruby application
 
 If you're using the official [Twilio Ruby gem](https://github.com/twilio/twilio-ruby), directing it to use Fakio is straightforward. When creating any Twilio::REST client, pass in a has with the following values:
 
