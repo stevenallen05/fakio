@@ -13,6 +13,10 @@ RUN apk add --update \
   imagemagick \
   sqlite \
   sqlite-dev \
+  mysql-client \
+  mysql-dev \
+  postgresql-client \
+  postgresql-dev \
   tzdata \
   && rm -rf /var/cache/apk/*
 
@@ -28,5 +32,7 @@ RUN bundle install
 
 ADD . /var/www
 RUN bundle exec rails assets:precompile
+
+EXPOSE 3000
 
 CMD [ "ruby", "/var/www/dockerized.rb" ]
