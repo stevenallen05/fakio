@@ -54,6 +54,7 @@ end
 group :test do
   gem 'factory_bot_rails', '~> 4'
   gem 'rspec'
+  gem 'rspec_junit_formatter'
   gem 'rspec-rails'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'

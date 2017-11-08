@@ -131,6 +131,7 @@ GEM
     minitest (5.10.3)
     multi_json (1.12.2)
     multipart-post (2.0.0)
+    mysql2 (0.4.9)
     nenv (0.3.0)
     nio4r (2.1.0)
     nokogiri (1.8.1)
@@ -141,6 +142,7 @@ GEM
     parallel (1.12.0)
     parser (2.4.0.0)
       ast (~> 2.2)
+    pg (0.21.0)
     phone (1.2.3)
     powerpack (0.1.1)
     pry (0.11.2)
@@ -200,6 +202,8 @@ GEM
       rspec-mocks (~> 3.7.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.0)
+    rspec_junit_formatter (0.3.0)
+      rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (0.51.0)
       parallel (~> 1.10)
       parser (>= 2.3.3.1, < 3.0)
@@ -269,10 +273,13 @@ DEPENDENCIES
   kaminari
   listen
   materialize-sass
+  mysql2
+  pg
   phone
   rails (= 5.1.4)
   rspec
   rspec-rails
+  rspec_junit_formatter
   rubocop
   rubocop-rails
   rubocop-rspec
