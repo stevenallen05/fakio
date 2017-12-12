@@ -7,6 +7,14 @@ RSpec.describe 'Lookups', type: :request do
     before { get phone_number_lookup_path, params: { phone_number: phone_number } }
     let(:json_response) { JSON.parse(response.body) }
 
+    context 'with a blank number' do
+      let(:phone_number) { '' }
+
+      it { expect(response).to have_http_status(200) }
+      it { expect(json_response).not_to have_key('country_code') }
+      it { expect(json_response).not_to have_key('carrier') }
+    end
+
     context 'with an American-matching number ending in a number other than 8 or 9' do
       let(:phone_number) { '+12223334444' }
 
