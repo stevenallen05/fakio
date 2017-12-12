@@ -21,3 +21,4 @@
 /coverage
 /.vscode
 .byebug_history
+/node_modules/*
