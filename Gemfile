@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'ffaker'
 gem 'iso_country_codes'
 gem 'phone'
 
@@ -53,7 +54,6 @@ end
 
 group :test do
   gem 'factory_bot_rails', '~> 4'
-  gem 'ffaker'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'rspec_junit_formatter'

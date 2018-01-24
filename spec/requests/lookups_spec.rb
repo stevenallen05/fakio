@@ -15,6 +15,25 @@ RSpec.describe 'Lookups', type: :request do
       it { expect(json_response).not_to have_key('carrier') }
     end
 
+    context 'with a nil phone number' do
+      let(:phone_number) { '' }
+
+      it { expect(response).to have_http_status(200) }
+      it { expect(json_response).not_to have_key('country_code') }
+      it { expect(json_response).not_to have_key('carrier') }
+    end
+
+    context 'with a Canadian-matching number ending in a number other than 8 or 9', :focus do
+      let(:phone_number) { '+16043334444' }
+
+      it { expect(response).to have_http_status(200) }
+      it { expect(json_response['country_code']).to eq 'CA' }
+      it { expect(json_response['carrier']['type']).to eq 'mobile' }
+      it { expect(json_response).to have_key('caller_name') }
+
+      it { ap json_response }
+    end
+
     context 'with an American-matching number ending in a number other than 8 or 9' do
       let(:phone_number) { '+12223334444' }
 

@@ -1440,3 +1440,10 @@
   :char_3_code: JP
   :name: Japan
   :international_dialing_prefix: "10"
+"canada": 
+  :country_code: "1"
+  :national_dialing_prefix: "1"
+  :char_2_code: "1"
+  :char_3_code: CA
+  :name: Canada
+  :international_dialing_prefix: "11"

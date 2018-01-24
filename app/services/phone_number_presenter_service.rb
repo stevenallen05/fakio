@@ -4,7 +4,7 @@ class PhoneNumberPresenterService
   def initialize(number:, url:)
     @number = Phoner::Phone.parse(number)
     @matcher = find_matcher
-    @country_data = CountryCodeLookupService.instance.find_country(@number.country_code) if @number
+    @country_data = CountryCodeLookupService.instance.find_country(@number) if @number
     @url = url
   end
 
@@ -17,10 +17,10 @@ class PhoneNumberPresenterService
             links: { "phone_number": 'https://lookups.twilio.com/v1/PhoneNumbers/{PhoneNumber}' }
           } if @number.nil?
     {
-      "caller_name": nil,
       "country_code": @country_data.try(:[], :char_3_code),
       "phone_number": @number.to_s,
       "national_format": @number.to_s,
+      "caller_name": caller_id_info,
       "carrier": {
         "mobile_country_code": '999',
         "mobile_network_code": '999',
@@ -34,6 +34,17 @@ class PhoneNumberPresenterService
   end
 
   private
+
+    def caller_id_info
+      caller_type = %w[business consumer].sample
+      ffaker = caller_type == 'business' ? FFaker::Company : FFaker::Name
+      {
+          "caller_name": ffaker.name,
+          "caller_type": caller_type.upcase,
+          "error_code": nil,
+      }
+    end
+
     def find_matcher
       matcher = nil
       PhoneNumber.all.order(:order).each do |ph|
