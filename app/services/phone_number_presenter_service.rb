@@ -13,8 +13,8 @@ class PhoneNumberPresenterService
   end
 
   def to_json
-    return { url: "https://lookups.twilio.com/v1/PhoneNumbers", 
-            links: {"phone_number": "https://lookups.twilio.com/v1/PhoneNumbers/{PhoneNumber}"}
+    return { url: 'https://lookups.twilio.com/v1/PhoneNumbers',
+            links: { "phone_number": 'https://lookups.twilio.com/v1/PhoneNumbers/{PhoneNumber}' }
           } if @number.nil?
     {
       "caller_name": nil,

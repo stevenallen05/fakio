@@ -8,9 +8,9 @@ gem 'rails', '5.1.4'
 
 gem 'active_model_serializers'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 gem 'mysql2'
 gem 'pg'
+gem 'sqlite3'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -53,9 +53,10 @@ end
 
 group :test do
   gem 'factory_bot_rails', '~> 4'
+  gem 'ffaker'
   gem 'rspec'
-  gem 'rspec_junit_formatter'
   gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
   gem 'rubocop-rails'
   gem 'rubocop-rspec'
   gem 'shoulda-matchers'

@@ -69,6 +69,7 @@ GEM
       railties (>= 3.0.0)
     faraday (0.13.1)
       multipart-post (>= 1.2, < 3)
+    ffaker (2.7.0)
     ffi (1.9.18)
     formatador (0.2.5)
     globalid (0.4.1)
@@ -275,6 +276,7 @@ DEPENDENCIES
   byebug
   dotenv-rails
   factory_bot_rails (~> 4)
+  ffaker
   guard
   guard-bundler
   guard-rspec

@@ -18,6 +18,7 @@ AllCops:
     - 'config/**/*'
     - 'spec/rails_helper.rb'
     - 'spec/spec_helper.rb'
+    - 'node_modules/**/*'
 
 
 Bundler/OrderedGems:

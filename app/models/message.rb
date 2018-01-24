@@ -11,15 +11,15 @@ class Message < ApplicationRecord
   end
 
 
-    # def date
-    #     valid? ? { 'datesent' => sent } : {}
-    # end
+  # def date
+  #     valid? ? { 'datesent' => sent } : {}
+  # end
 
-    # def price
-    #     { 'price' => valid? ? '0.03' : '0.00' }
-    # end
+  # def price
+  #     { 'price' => valid? ? '0.03' : '0.00' }
+  # end
 
-    # def status
-    #     { 'status' => valid? ? 'sent' : 'failed' }
-    # end
+  # def status
+  #     { 'status' => valid? ? 'sent' : 'failed' }
+  # end
 end
